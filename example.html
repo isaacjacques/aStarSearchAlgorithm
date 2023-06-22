@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AStar Algorithm - PortfolioSite</title>
+</head>
+<body>
+	<div class="demo">
+		<canvas id="demo-grid" class="grid"></canvas>
+		<textarea id="demo-log" class="log" rows="10" cols="64"></textarea>
+		<button id="demo-control" class="control" type="button">Start</button>
+	</div>
+</body>
+</html>
+<script src="./astar.js" type="text/javascript"></script>
+<script src="./grid.js" type="text/javascript"></script>
+<script src="./gridcontrol.js" type="text/javascript"></script>
+<script src="./gridpoint.js" type="text/javascript"></script>
+<script src="./log.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+	var log = new Log(document.getElementById('demo-log'));
+	var grid = new Grid(document.getElementById('demo-grid'), 30, 30, log);
+	var gridControl = new GridControl(document.getElementById('demo-control'), grid, findPathByAstar, log);
+
+	grid.redraw();
+	gridControl.ready();
+</script>
+<style>
+	:root {
+		--primary-color: #344E41;
+		--secondary-color: #3A5A40;
+		--text-color: #DAD7CD;
+		--accent-color: #A3B18A;
+	}
+
+	body {
+		background-color: var(--primary-color);
+	}
+
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 30%;
+	}
+
+	.navbar a {
+		display: block;
+		margin-bottom: 10px;
+		text-decoration: none;
+		color: var(--text-color);
+	}
+
+	.text {
+		font-family: Helvetica, Arial, sans-serif;
+		color: var(--text-color);
+	}
+
+	.text:hover {
+		filter: brightness(0.90);
+	}
+
+	.accent {
+		color: var(--accent-color);
+	}
+
+	.demo {
+		display: flex;
+		flex-direction: column;
+		/*align-items: flex-start;*/
+		gap: 10px;
+		background-color: var(--secondary-color);
+		height: 90vh;
+	}
+
+	.grid {
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		height: 80%;
+	}
+
+	.log {
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		height: 20%;
+		line-height: 1.5;
+		flex: 1;
+		overflow: auto;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: small;
+		/*white-space: pre-wrap;*/
+	}
+
+	.control {
+		background-color: var(--accent-color);
+		color: var(--text-color);
+		text-align: center;
+		text-decoration: none;
+		transition-duration: 0.5s;
+		border-radius: 5px;
+		display: inline-block;
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: small;
+		width: 10%;
+	}
+
+	.control:hover {
+		filter: brightness(0.90);
+	}
+</style>
