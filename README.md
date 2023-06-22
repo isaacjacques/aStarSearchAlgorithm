@@ -6,7 +6,8 @@ This demo allows for users to select cells in a grid to create obstacles and fin
 
 ## How to Use
 The demo objects are intended for use with html elements.
-Below is a snippit from the included [example](https://github.com/isaacjacques/aStarSearchAlgorithm/example.html)
+Below is a snippit from the included [example](https://github.com/isaacjacques/aStarSearchAlgorithm/blob/main/example.html)
+
 ```html
 <html lang="en">
 <head>
@@ -40,7 +41,7 @@ JavaScript, HTML and CSS
 
 
 ## Authors
-* **isaac jacques** - *Initial work* - [isaacjacques](https://github.com/isaacjacques)
+* **Isaac Jacques** - *Initial work* - [isaacjacques](https://github.com/isaacjacques)
  
  
 ## License
